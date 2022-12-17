@@ -1,7 +1,7 @@
 # TELE6550_PRJ
 <--------------------------- main files --------------------------->
- • https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-sensor/app.py
- • https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-trigger/iot-hub-trigger/__init__.py
+• https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-sensor/app.py
+• https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-trigger/iot-hub-trigger/__init__.py
 <------------------------------------------------------------------>
 •	Configure a python virtual environment
 •	Installed and setup a counterfit connection running on local port 5000
