@@ -9,7 +9,7 @@ from counterfit_connection import CounterFitConnection
 from counterfit_shims_grove.grove_relay import GroveRelay
 CounterFitConnection.init('127.0.0.1', 5000)
 
-connection_string = "HostName=soil-moisture-sensor-jeggslearns.azure-devices.net;DeviceId=soil-moisture-sensor;SharedAccessKey=Usc7SVLx58I+/4bsoxBREn2Yuh56CFPhjHIYdpHbxeI="
+connection_string = "HostName=soil-moisture-sensor-jeggslearns.azure-devices.net;DeviceId=soil-moisture-sensor;SharedAccessKey=**********************"
 
 device_client = IoTHubDeviceClient.create_from_connection_string(connection_string)
 
