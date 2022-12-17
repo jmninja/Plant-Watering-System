@@ -1,0 +1,94 @@
+<div class="card shadow-sm border-secondary" style="margin: 10px;">
+    <div class="card-header py-3 text-white bg-secondary">
+        <div class="container-fluid d-flex align-items-center">
+            <h4 class="my-0 fw-normal">{{ sensor.sensor_name() }}</h4>
+            <h4 class="my-0 fw-normal ms-auto">Pin {{sensor.port}}</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="value{{sensor.id}}">Value:</label>
+                </div>
+                <div class="col">
+                    <input class="form-check-input" type="checkbox" id="value{{sensor.id}}" value="{{sensor.value}}"
+                        {% if sensor.random: %}
+                            disabled
+                        {% endif %}
+                    />
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <label for="random{{sensor.id}}">Random:</label>
+                </div>
+                <div class="col">
+                    <input class="form-check-input" type="checkbox" id="random{{sensor.id}}" 
+                        {% if sensor.random: %}
+                            checked
+                        {% endif %}
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <button id="sensor_set_button{{sensor.id}}" class="w-100 btn btn-lg btn-primary">Set</button>
+                </div>
+                <div class="col">
+                    <button id="sensor_delete_button{{sensor.id}}" class="w-100 btn btn-lg btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var set_button = document.getElementById("sensor_set_button{{sensor.id}}")
+            var delete_button = document.getElementById("sensor_delete_button{{sensor.id}}")
+            var is_random_control = document.getElementById("random{{sensor.id}}")
+            var value_control = document.getElementById("value{{sensor.id}}")
+
+            is_random_control.addEventListener("change", function() {
+                value_control.disabled = is_random_control.checked
+            })
+
+            set_button.addEventListener("click", function() {
+                // get the values
+                var is_random = is_random_control.checked
+                var value = value_control.checked
+
+                var payload = {
+                    "port": "{{sensor.port}}",
+                    'value': value,
+                    'is_random': is_random
+                }
+
+                var xhr = new XMLHttpRequest();
+                var url = "./boolean_sensor_settings";
+                xhr.open("POST", url, false);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                var data = JSON.stringify(payload);
+                xhr.send(data);
+            });
+
+            delete_button.addEventListener("click", function(){
+                var payload = {
+                    "port": "{{sensor.port}}"
+                }
+
+                var xhr = new XMLHttpRequest();
+                var url = "./delete_sensor";
+                xhr.open("POST", url, false);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                var data = JSON.stringify(payload);
+                xhr.send(data);
+                location.reload();
+            });
+        })
+    </script>
+</div>

@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: counterfit-connection
+Version: 0.1.0.dev5
+Summary: Connection library library for use with the CounterFit Virtual IoT Device app
+Home-page: https://github.com/CounterFit-IoT/CounterFit
+Author: Jim Bennett
+License: MIT
+Keywords: iot grove seeed virtual hardware
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Hardware
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# CounterFit Shims - CounterFit connection
+
+![CounterFit Connection](https://img.shields.io/badge/Platform-Python-green) [![PyPI](https://img.shields.io/pypi/v/counterfit-connection)](https://pypi.org/project/counterfit-connection)
+
+A core connection library to use with the [CounterFit virtual IoT device app](https://github.com/CounterFit-IoT/CounterFit).
+
+Use this when writing a shim library.
+
+
