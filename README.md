@@ -1,9 +1,9 @@
 # TELE6550_PRJ
 <--------------------------- main files --------------------------->
- https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-sensor/app.py
- https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-trigger/iot-hub-trigger/__init__.py
+ • https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-sensor/app.py
+ • https://github.com/jmninja/TELE6550_PRJ/blob/master/soil-moisture-trigger/iot-hub-trigger/__init__.py
 <------------------------------------------------------------------>
-•	Configureg a python virtual environment
+•	Configure a python virtual environment
 •	Installed and setup a counterfit connection running on local port 5000
 •	Setup sensors readings to random and activate actuator
 •	Setup Microsoft IoT Hub 
